@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js></script>
+	<title>Le2met Setti</title>
+</head>
+<body>
+<!-- Header section starts-->
+<header id="header">
+	<nav>
+		<ul>
+			<li><a  href="#home">Home</a></li>
+			<li><a  href="#special">Special</a></li>
+			<li><a  href="#about">About</a></li>
+			<li><a  href="#dishes">Dishes</a></li>
+			<li><a  href="#contact">Contact</a></li>
+		</ul>
+	</nav>
+	<div class="fas fa-hamburger"></div>
+	<a href="#" class="logo" > <img src="logo.jpg"></a>
+</header>
+
+<!-- Header section ends-->
+
+<!-- Home section starts-->
+
+<section id="home" class="container-fluid">
+
+	<div class="row min-vh-100 align-items-center">
+
+		<div class="col-md-8 ml-md-5 text-md-left text-center content">
+			<h1>Food that you can't resist</h1>
+			<h2>enjoy the marvelous taste</h2>
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam nesciunt deleniti aliquid voluptates, quae recusandae qui doloribus vero officia, consectetur quasi, atque magnam nisi tempore, debitis dolore suscipit. Obcaecati, sapiente.</p>
+			<a href="#special"><button>Get started</button></a>
+		</div>
+
+		<div class="video-container">
+  		 <video src="vid1.mp4"  autoplay muted loop class="vid vid1"></video>
+  		
+		</div>
+
+		
+	</div>
+	
+</section>
+
+<!-- Home section ends-->
+
+<!-- Dishes section starts-->
+
+<section class="dishes" id="dishes">
+	<h1 class="text-center d">Dishes</h1>
+	<div class="container row">
+		<div class="img show_img  ">
+			<img src="kebe.jpg" >
+			<h1>Kebehh</h1>
+		</div>
+		<div class="img ">
+			<img src="canape.jpg" >
+			<h1>Canapee</h1>
+		</div>
+		<div class="img ">
+			<img src="kabseh.jpg">
+			<h1>Kabseh</h1>
+		</div>
+		<div class="img ">
+			<img src="spinach.jpg">
+			<h1>spinach</h1>
+		</div>
+		<div class="img ">
+			<img src="sayadeye.jpg" >
+			<h1>sayadeye</h1>
+		</div>
+	</div>
+</section>
+
+
+
+
+<!-- Dishes section ends-->
+
+
+<!-- script part starts-->
+<script>
+	$(document).ready(function(){
+		$('.fa-hamburger').click(function(){
+			$(this).toggleClass('fa-times');
+			$('nav').toggleClass('nav-toggle');
+		});
+
+		$('nav ul li a').click(function(){
+			$('.fa-hamburger').removeClass('fa-times');
+			$('nav').removeClass('nav-toggle');
+		});
+
+
+	});
+
+	const images=document.querySelectorAll('.img');
+
+	images.forEach(img=>{
+		img.addEventListener('click',()=>{
+			remove_class(images);
+			img.classList.add('show_img');
+		})
+	})
+
+	function remove_class(images){
+		images.forEach(img=>{
+			img.classList.remove('show_img');
+		})
+	}
+</script>
+</body>
+</html>
